@@ -1,0 +1,39 @@
+{
+    "name": "marqu3s/yii2-nrsgateway",
+    "description": "Yii2 NRSGateway extension.",
+    "type": "yii2-extension",
+    "keywords": [
+        "yii2",
+        "nrsgateway",
+        "sms"
+    ],
+    "homepage": "https://github.com/marqu3s/yii2-nrsgateway",
+    "time": "2016-08-01",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Joao Marques",
+            "email": "joao@jjmf.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/marqu3s/yii2-nrsgateway/issues",
+        "source": "https://github.com/marqu3s/yii2-nrsgateway"
+    },
+    "require": {
+        "yiisoft/yii2": "~2",
+        "marqu3s/nrsgateway": "@stable"
+    },
+    "autoload": {
+        "psr-4": {
+            "marqu3s\\nrsgateway\\": ""
+        }
+    },
+    "extra": {
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        }
+    }
+}
