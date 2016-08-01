@@ -1,6 +1,6 @@
-# Yii2 Summernote widget. Summernote 0.8.0
+# Yii2 Framework NRSGateway extension.
 
-[Yii2](http://www.yiiframework.com) [Summernote](http://hackerwins.github.io/summernote) widget. Super simple WYSIWYG editor on Bootstrap
+[Yii2 Framework website](http://www.yiiframework.com)
 
 ## Installation
 
@@ -10,37 +10,44 @@ The preferred way to install this extension is through [Composer](http://getcomp
 
 Either run
 
-	php composer.phar require marqu3s/yii2-summernote "dev-master"
+    php composer.phar require marqu3s/yii2-nrsgateway "dev"
 
 or add
 
-	"marqu3s/yii2-summernote": "dev-master"
+    "marqu3s/yii2-nrsgateway": "dev"
 
 to the require section of your composer.json
 
 ## Usage
 
-	<?= $form->field($model, 'content')->widget(Summernote::className(), [
-		'clientOptions' => [
-			...
-		]
-	]) ?>
+Add to main.php components section:
 
-or
+```php
+[
+    'components' => [
+        ...
+        'sms' => [
+            'class' => 'marqu3s\nrsgateway\YiiSMSService',
+            'username' => 'theUsername',
+            'password' => 'thePassword'
+        ],
+        ...
+    ]
+]
+```
 
-	<?= Summernote::widget([
-		'name' => 'editor_id',
-		'clientOptions' => [
-			...
-		]
-	]) ?>
+and use it:
 
-See [clientOptions](http://hackerwins.github.io/summernote/features.html)
+```php
+$nrs = Yii::$app()->sms->nrs;
+$nrs->to   = ['xxxxxxxxxxxxx', 'yyyyyyyyyyyyy'];
+$nrs->from = 'Sender';
+$nrs->msg  = 'This is a test message.';
+$result = $nrs->send();
+```
+
+Check $result variable for errors.
 
 ## Original Author
-
-[Aleksandr Zelenin](https://github.com/zelenin/), e-mail: [aleksandr@zelenin.me](mailto:aleksandr@zelenin.me)
-
-## Updates by
 
 [João Marques](https://github.com/marqu3s/), e-mail: [joao@jjmf.com](mailto:joao@jjmf.com)
