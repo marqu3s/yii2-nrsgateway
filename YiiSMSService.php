@@ -13,7 +13,7 @@ use yii\base\Component;
 class YiiSMSService extends Component
 {
     /** @var SMSService */
-    private $nrs = null;
+    public $nrs = null;
 
     public $username;
     public $password;
