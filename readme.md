@@ -39,7 +39,7 @@ Add to main.php components section:
 and use it:
 
 ```php
-$nrs = Yii::$app()->sms->nrs;
+$nrs = Yii::$app->sms->nrs;
 $nrs->to   = ['xxxxxxxxxxxxx', 'yyyyyyyyyyyyy'];
 $nrs->from = 'Sender';
 $nrs->msg  = 'This is a test message.';
